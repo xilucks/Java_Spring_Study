@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.app.TimeTraceAop;
 import hello.hellospring.repository.JdbcMemberRepository;
 import hello.hellospring.repository.JpaMemberRepository;
 import hello.hellospring.repository.MemberRepository;
@@ -23,22 +24,36 @@ public class SpringConfig {
 //        this.dataSource = dataSource;
 //    }
 
-    @PersistenceContext
-    private EntityManager em;
+//    @PersistenceContext
+//    private EntityManager em;
+//
+//    @Autowired
+//    public SpringConfig(EntityManager em){
+//        this.em = em;
+//    }
+
+    private final MemberRepository memberRepository;
 
     @Autowired
-    public SpringConfig(EntityManager em){
-        this.em = em;
-    }
-    @Bean
-    public MemberService memberService() {
-        return new MemberService(memberRepository());
+    public SpringConfig(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
     }
 
     @Bean
-    public MemberRepository memberRepository(){
-//        return new JdbcMemberRepository(dataSource);
-        return new JpaMemberRepository(em);
+    public MemberService memberService() {
+        return new MemberService(memberRepository);
     }
+
+    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
+    }
+
+//    @Bean
+//    public MemberRepository memberRepository(){
+////        return new JdbcMemberRepository(dataSource);
+////        return new JpaMemberRepository(em);
+//
+//    }
 
 }
