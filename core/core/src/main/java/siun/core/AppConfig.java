@@ -1,5 +1,6 @@
 package siun.core;
 
+import siun.core.discount.DiscountPolicy;
 import siun.core.discount.FixDiscountPolicy;
 import siun.core.member.MemberService;
 import siun.core.member.MemberServiceImpl;
@@ -11,12 +12,19 @@ public class AppConfig {
     //어플리케이션 전체를 설정하고 구성
 
     public MemberService memberService(){
-        return new MemberServiceImpl(new MemoryMemberRepository());
+        return new MemberServiceImpl(memberRepository());
+    }
+
+    private MemoryMemberRepository memberRepository() {
+        return new MemoryMemberRepository();
     }
 
     public OrderService orderService(){
-        return new OrderServiceImpl(new MemoryMemberRepository(),
-                                    new FixDiscountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+    }
+
+    public DiscountPolicy discountPolicy(){
+        return new FixDiscountPolicy();
     }
 
 
