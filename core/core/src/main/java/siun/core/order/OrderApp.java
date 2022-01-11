@@ -1,17 +1,17 @@
 package siun.core.order;
 
+import siun.core.AppConfig;
 import siun.core.member.Grade;
 import siun.core.member.Member;
 import siun.core.member.MemberService;
 import siun.core.member.MemberServiceImpl;
 
-import java.util.Arrays;
-
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
