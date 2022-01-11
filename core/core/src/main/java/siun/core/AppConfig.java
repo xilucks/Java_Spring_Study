@@ -2,6 +2,7 @@ package siun.core;
 
 import siun.core.discount.DiscountPolicy;
 import siun.core.discount.FixDiscountPolicy;
+import siun.core.discount.RateDiscountPolicy;
 import siun.core.member.MemberService;
 import siun.core.member.MemberServiceImpl;
 import siun.core.member.MemoryMemberRepository;
@@ -24,7 +25,7 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy(){
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 
