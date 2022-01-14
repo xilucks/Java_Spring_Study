@@ -15,7 +15,7 @@ import siun.core.order.OrderServiceImpl;
 public class AppConfig {
     //어플리케이션 전체를 설정하고 구성
     //설정 정보, 구성 정보
-
+    //Test
     @Bean
     public MemberService memberService(){
         return new MemberServiceImpl(memberRepository());
