@@ -9,7 +9,7 @@
     </bean>
 
     <bean id = "memberRepository" class = "siun.core.member.MemoryMemberRepository">
-        </bean>
+    </bean>
 
     <bean id = "discountPolicy" class = "siun.core.discount.RateDiscountPolicy"/>
 

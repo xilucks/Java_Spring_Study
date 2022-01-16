@@ -1,4 +1,4 @@
-package beanfind;
+package siun.core.beanfind;
 
 
 import org.assertj.core.api.Assertions;
