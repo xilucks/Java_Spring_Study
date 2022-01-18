@@ -1,8 +1,11 @@
 package siun.core.discount;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import siun.core.member.Grade;
 import siun.core.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
     private int discountPercent = 10;
 

@@ -3,6 +3,7 @@ package siun.core.discount;
 import siun.core.member.Grade;
 import siun.core.member.Member;
 
+
 public class FixDiscountPolicy implements DiscountPolicy{
 
     private int discountFixAmount = 1000;
