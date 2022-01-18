@@ -1,4 +1,4 @@
-package siun.core.order;
+package siun.core;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
