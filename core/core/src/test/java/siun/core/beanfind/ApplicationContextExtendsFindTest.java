@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ApplicationContextExtendsFindTest {
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
     @Test
     @DisplayName("부모 타입으로 조회시, 자식이 둘 이상 있으면, 중복 오류 발생")
