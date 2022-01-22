@@ -1,9 +1,10 @@
 package siun.core.discount;
 
+import org.springframework.stereotype.Component;
 import siun.core.member.Grade;
 import siun.core.member.Member;
 
-
+@Component
 public class FixDiscountPolicy implements DiscountPolicy{
 
     private int discountFixAmount = 1000;
