@@ -3,6 +3,9 @@ package siun.core.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class NetworkClient {
 
     private String url;
@@ -29,13 +32,13 @@ public class NetworkClient {
     }
 
     //의존 관계 주입이 끝나면.
-
+    @PostConstruct
     public void init() {
         connect();
         call("init connect message");
     }
 
-
+    @PreDestroy
     public void close()  {
         disconnect();
     }
