@@ -3,7 +3,7 @@ package siun.core.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient {
 
     private String url;
 
@@ -29,14 +29,14 @@ public class NetworkClient implements InitializingBean, DisposableBean {
     }
 
     //의존 관계 주입이 끝나면.
-    @Override
-    public void afterPropertiesSet() throws Exception {
+
+    public void init() {
         connect();
         call("init connect message");
     }
 
-    @Override
-    public void destroy() throws Exception {
+
+    public void close()  {
         disconnect();
     }
 }
