@@ -14,10 +14,10 @@ import java.util.List;
 
 @WebServlet(name = "mvcMemberListServlet", urlPatterns = "/servlet-mvc/members")
 public class MvcMemberListServlet extends HttpServlet {
-
+    private MemberRepository memberRepository = MemberRepository.getInstance();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Member> members = MemberRepository.findAll();
+        List<Member> members = memberRepository.findAll();
 
         req.setAttribute("members", members);
 
