@@ -20,8 +20,9 @@ public class SpringMemberControllerV2 {
     public ModelAndView newForm(){
         return new ModelAndView("new-form");
     }
-    @RequestMapping("/save")
-    public ModelAndView save(){
+
+    @RequestMapping
+    public ModelAndView members(){
         List<Member> members = memberRepository.findAll();
         ModelAndView mv = new ModelAndView("members");
         mv.addObject("members", members);
@@ -29,8 +30,8 @@ public class SpringMemberControllerV2 {
         return mv;
     }
 
-    @RequestMapping
-    public ModelAndView members(HttpServletRequest request, HttpServletResponse response){
+    @RequestMapping("/save")
+    public ModelAndView save(HttpServletRequest request, HttpServletResponse response){
         String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
 
