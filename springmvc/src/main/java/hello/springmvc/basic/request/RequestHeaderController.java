@@ -27,6 +27,8 @@ public class RequestHeaderController {
                          ){
 
         log.info("request = {}", request);
+        log.info("locale = {}", locale);
+        log.info("cookie = {}", cookie);
         return "ok";
     }
 }
