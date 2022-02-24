@@ -22,7 +22,6 @@ public class SpringMemberControllerV3 {
     public String newForm() {
         return "new-form";
     }
-
     //@RequestMapping(method = RequestMethod.GET)
     @GetMapping
     public String members(Model model) {
@@ -31,7 +30,6 @@ public class SpringMemberControllerV3 {
         model.addAttribute("members", members);
         return "members";
     }
-
     //@RequestMapping(value = "/save", method = RequestMethod.POST)
     @PostMapping("/save")
     public String save(@RequestParam("username") String username,
