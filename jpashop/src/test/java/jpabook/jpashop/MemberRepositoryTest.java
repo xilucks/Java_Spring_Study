@@ -15,13 +15,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberRepositoryTest {
 
     @Autowired MemberRepository memberRepository;
-
+    //작동 테스트
     @Test
     @Transactional
     public void testMember() throws Exception{
         //given
         Member member = new Member();
         member.setUsername("userA");
+
 
         //when
         Long savedId = memberRepository.save(member);
@@ -30,7 +31,6 @@ class MemberRepositoryTest {
         //then
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
         Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-
     }
 
 }
