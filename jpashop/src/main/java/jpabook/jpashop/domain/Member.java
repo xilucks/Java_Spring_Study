@@ -6,7 +6,7 @@ import jpabook.jpashop.domain.Address;
 
 
 import javax.persistence.*;
-import javax.persistence.criteria.Order;
+import jpabook.jpashop.domain.Order;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-    private String  name;
+    private String name;
 
     @Embedded
     private Address address;
