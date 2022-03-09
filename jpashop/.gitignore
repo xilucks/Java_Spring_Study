@@ -1,5 +1,9 @@
 HELP.md
 .gradle
+.css
+.css.map
+.js
+.js.map
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
