@@ -44,3 +44,6 @@ out/
 **/src/main/resources/static/js/
 **/src/main/resources/static/js/*.js
 **/src/main/resources/static/js/*.js.map
+**/src/main/resources/static/css/
+**/src/main/resources/static/css/*.css
+**/src/main/resources/static/css/*.css.map
