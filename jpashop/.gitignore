@@ -39,3 +39,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Resource File ###
+**/src/main/resources/static/js/*.js
+**/src/main/resources/static/js/*.js.map
