@@ -51,7 +51,7 @@ public class OrderRepository {
         }
 
         TypedQuery<Order> query = em.createQuery(jpql, Order.class)
-                .setMaxResults(1000); //최  1000건
+                .setMaxResults(1000); //최대 1000건
         if (orderSearch.getOrderStatus() != null) {
             query = query.setParameter("status", orderSearch.getOrderStatus());
         }
